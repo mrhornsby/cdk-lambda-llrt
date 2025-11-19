@@ -134,7 +134,7 @@ export class LlrtFunction extends NodejsFunction {
       version == 'latest'
         ? `https://github.com/awslabs/llrt/releases/latest/download/${binaryName}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/${binaryName}.zip`;
-    const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
+    const cacheDir = posix.join(__dirname, `/../.tmp/llrt/${version}/${arch}/${binaryType}`);
 
     if (!props.llrtBinaryPath) {
       execSync(`if [ ! -e ${posix.join(cacheDir, 'bootstrap')} ]; then
@@ -150,7 +150,7 @@ export class LlrtFunction extends NodejsFunction {
     const binaryPath = !props.llrtBinaryPath ? posix.join(cacheDir, 'bootstrap') : props.llrtBinaryPath;
 
     const { commandHooks: originalCommandHooks, ...otherBundlingProps } = props.bundling ?? {};
-    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (i, o) => props.llrtLayer ? [] : [`cp ${posix.join(i, binaryPath)} ${posix.join(o, 'bootstrap')}`];
+    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (_i, o) => props.llrtLayer ? [] : [`cp ${binaryPath} ${posix.join(o, 'bootstrap')}`];
 
     const layers = props.llrtLayer ? buildLayer(scope, binaryPath) : [];
 
