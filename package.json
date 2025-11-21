@@ -3,7 +3,7 @@
   "description": "Deploy Lambda functions with LLRT (Low Latency Runtime)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tmokmss/cdk-lambda-llrt.git"
+    "url": "https://github.com/mrhornsby/cdk-lambda-llrt.git"
   },
   "scripts": {
     "build": "npx projen build",
