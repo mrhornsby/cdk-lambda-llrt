@@ -30,8 +30,8 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "tmokmss",
-    "email": "tomookam@live.jp",
+    "name": "mrhornsby",
+    "email": "cdk@markhornsby.co.uk",
     "organization": false
   },
   "devDependencies": {

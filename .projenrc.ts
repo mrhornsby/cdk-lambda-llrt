@@ -1,10 +1,10 @@
 import { join } from 'path';
 import { awscdk } from 'projen';
-import { NodePackageManager } from 'projen/lib/javascript';
+import { NodePackageManager, NpmAccess } from 'projen/lib/javascript';
 
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'tmokmss',
-  authorAddress: 'tomookam@live.jp',
+  author: 'mrhornsby',
+  authorAddress: 'cdk@markhornsby.co.uk',
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
   cdkVersion: '2.38.0',
   defaultReleaseBranch: 'main',
@@ -17,11 +17,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     dirs: [],
     ignorePatterns: ['example/**/*', 'test/assets/**/*', 'test/*.snapshot/**/*', '*.d.ts'],
   },
+  npmAccess: NpmAccess.PUBLIC,
   npmIgnoreOptions: {
     ignorePatterns: ['/example/lambda/node_modules', '/example/lambda/.llrt'],
   },
   workflowNodeVersion: '24',
-  npmTrustedPublishing: true,
+  //npmTrustedPublishing: true,
   packageManager: NodePackageManager.NPM,
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
   keywords: ['aws', 'cdk', 'lambda', 'aws-cdk'],
