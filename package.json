@@ -1,5 +1,5 @@
 {
-  "name": "cdk-lambda-llrt",
+  "name": "@mrhornsby/cdk-lambda-llrt",
   "description": "Deploy Lambda functions with LLRT (Low Latency Runtime)",
   "repository": {
     "type": "git",
