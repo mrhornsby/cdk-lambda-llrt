@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiVersion: '~5.8.0',
   name: '@mrhornsby/cdk-lambda-llrt',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/tmokmss/cdk-lambda-llrt.git',
+  repositoryUrl: 'https://github.com/mrhornsby/cdk-lambda-llrt.git',
   description: 'Deploy Lambda functions with LLRT (Low Latency Runtime)',
   eslintOptions: {
     dirs: [],
