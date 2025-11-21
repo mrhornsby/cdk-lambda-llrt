@@ -8,6 +8,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
   cdkVersion: '2.38.0',
   defaultReleaseBranch: 'main',
+  prerelease: 'beta',
   jsiiVersion: '~5.8.0',
   name: '@mrhornsby/cdk-lambda-llrt',
   projenrcTs: true,
